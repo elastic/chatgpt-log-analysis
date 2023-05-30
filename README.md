@@ -1,6 +1,8 @@
 # Log Analyzer with OpenAI and Elasticsearch
 
-This project is a log analyzer built on Flask, powered by the OpenAI GPT-4 model and Elasticsearch. It takes a user input, queries Elasticsearch for relevant log messages, and then uses the OpenAI model to analyze these logs and provide suggestions about the root cause of any identified issues.
+This project is a log analyzer built on Flask, powered by the OpenAI GPT-4 model and Elasticsearch power by ESRE. You will need to setup your Elasticsearch environment to use ESRE for this to work.
+
+It takes a user input, queries Elasticsearch for relevant log messages, and then uses the OpenAI model to analyze these logs and provide suggestions about the root cause of any identified issues.
 
 ## Getting Started
 
@@ -19,9 +21,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/log-analyzer.git
-cd log-analyzer
+git clone https://github.com/elastic/chatgpt-log-analysis
 
+cd chatgpt-log-analysis
 
 2. Install the required Python packages using pip:
 
