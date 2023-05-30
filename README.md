@@ -1,6 +1,6 @@
 # Log Analyzer with OpenAI and Elasticsearch
 
-This project is a log analyzer built on Flask, powered by the OpenAI GPT-4 model and Elasticsearch power by ESRE. You will need to setup your Elasticsearch environment to use ESRE for this to work.
+This project is a log analyzer built on Flask, powered by the OpenAI GPT-4 model and Elasticsearch powered by ESRE. You will need to setup your Elasticsearch environment to use ESRE for this to work.
 
 It takes a user input, queries Elasticsearch for relevant log messages, and then uses the OpenAI model to analyze these logs and provide suggestions about the root cause of any identified issues.
 
