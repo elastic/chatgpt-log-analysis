@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Agents</title>
+    <style>
+        #conversation {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #config-form {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChatGPT Agents</h1>
+    <img src="{{ url_for('static', filename='img/download.png') }}"/>
+    <img src="{{ url_for('static', filename='img/elastic-logo.svg') }}"/>
+    <form id="config-form">
+        <label for="openai_key">OpenAI API Key:</label>
+        <input type="text" id="openai_key" name="openai_key" required>
+        <label for="es_host">Elasticsearch Host:</label>
+        <input type="text" id="es_host" name="es_host" required>
+        <label for="es_port">Elasticsearch Port:</label>
+        <input type="number" id="es_port" name="es_port" required>
+        <label for="es_username">Elasticsearch Username:</label>
+        <input type="text" id="es_username" name="es_username" required>
+        <label for="es_password">Elasticsearch Password:</label>
+        <input type="password" id="es_password" name="es_password" required>
+        <button type="submit">Save Config</button>
+    </form>
+    <div id="conversation"></div>
+    <form id="message-form" >
+        <input type="text" id="user-input" name="user_input" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </form>
+    <script src="{{ url_for('static', filename='js/elastic-apm-rum.umd.min.js') }}" crossorigin></script>
+    <script>
+    elasticApm.init({
+        serviceName: 'my-service-name',
+        serverUrl: 'https://3f8b85b3af114842910a785efc59276f.apm.us-west2.gcp.elastic-cloud.com:443',
+    })
+    </script>
+
+    <!-- Include the same JavaScript/jQuery code as before -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+        $('#config-form').on('submit', function(e) {
+            e.preventDefault();
+
+            let formData = $(this).serialize();
+
+            $.ajax({
+                url: '/config',
+                method: 'POST',
+                data: formData,
+                success: function(data) {
+                    if (data.success) {
+                        alert('Configuration saved successfully.');
+                        $('#message-form').show();
+                    } else {
+                        alert('An error occurred while saving the configuration.');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred while saving the configuration.');
+                }
+            });
+        });
+            $('#message-form').on('submit', function(e) {
+                e.preventDefault();
+
+                let userInput = $('#user-input').val();
+                $('#conversation').append('<p><strong>User:</strong> ' + userInput + '</p>');
+                $('#user-input').val('');
+
+                $.ajax({
+                    url: '/message',
+                    method: 'POST',
+                    data: {user_input: userInput},
+                    success: function(data) {
+                        let response = data.response;
+                        $('#conversation').append('<p><strong>Agent:</strong> ' + response + '</p>');
+                        let conversationDiv = document.getElementById('conversation');
+                        conversationDiv.scrollTop = conversationDiv.scrollHeight;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
