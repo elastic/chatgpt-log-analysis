@@ -46,9 +46,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 After starting the Flask app, you can use the following endpoints:
 
-- `/` : Returns the 'index.html' page. This is where you should start, open this up in your browser. 
+- `/` : Returns the 'index.html' page. This is where you should start, open this up in your browser. It should look like this below:
 
-- `/config` (POST method): Configures the Elasticsearch and OpenAI clients. The request should contain the following parameters in form data, you can use the front end application and the "Save Config" button to populate this:
+![alt text](https://github.com/davidgeorgehope/ChatGPT4ElasticAgents/blob/main/example.png)
+
+
+- `/config` (POST method): Configures the Elasticsearch and OpenAI clients. The request should contain the following parameters in form data, you can use the front end application and the "Save Config" button to populate this.
 
     - 'openai_key' : Your OpenAI API key.
     - 'es_host' : Host of the Elasticsearch instance.
