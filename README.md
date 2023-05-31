@@ -60,7 +60,7 @@ After starting the Flask app, you can use the following endpoints:
 
 ### Troubleshooting
 
-If the `/message` endpoint returns an error message saying "Configuration is missing. Please provide the OpenAI API key and Elasticsearch details.", make sure you have properly configured the Elasticsearch and OpenAI clients using the `/config` endpoint.
+If the `/message` endpoint returns an error message saying "Configuration is missing. Please provide the OpenAI API key and Elasticsearch details.", make sure you have properly configured the Elasticsearch and OpenAI clients using the `/config` endpoint or populating the config using the "Save Config" button on the front end as a first step.
 
 ### Further Development
 
