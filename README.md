@@ -52,11 +52,11 @@ After starting the Flask app, you can use the following endpoints:
 
 - `/config` (POST method): Configures the Elasticsearch and OpenAI clients. The request should contain the following parameters in form data, you can use the front end application and the "Save Config" button to populate this:
 
-- 'openai_key' : Your OpenAI API key.
-- 'es_host' : Host of the Elasticsearch instance.
-- 'es_port' : Port number of the Elasticsearch instance.
-- 'es_username' : Username for Elasticsearch instance.
-- 'es_password' : Password for Elasticsearch instance.
+    - 'openai_key' : Your OpenAI API key.
+    - 'es_host' : Host of the Elasticsearch instance.
+    - 'es_port' : Port number of the Elasticsearch instance.
+    - 'es_username' : Username for Elasticsearch instance.
+    - 'es_password' : Password for Elasticsearch instance.
 
 - `/message` (POST method): Takes 'user_input' as a form data parameter, queries Elasticsearch with the input, analyzes the top two log results using OpenAI's GPT-4 model, and returns the analysis.
 
