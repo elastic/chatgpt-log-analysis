@@ -20,6 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installation
 
 1. Clone the repository to your local machine:
+       
         git clone https://github.com/elastic/chatgpt-log-analysis
         cd chatgpt-log-analysis
 
@@ -37,7 +38,7 @@ The `requirements.txt` file includes the following packages:
 
 3. Run the application:
 
-        ```python app.py```
+        python app.py
 
 Again, you may need to use `python3` instead of `python`, depending on your setup.
 
