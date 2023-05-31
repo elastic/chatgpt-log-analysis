@@ -69,7 +69,7 @@ This is a basic setup for a log analysis tool. Depending on your specific use ca
 Please feel free to fork this project and modify it according to your needs.
 
 ## Disclaimer
-See the full documentation online in this blog post is an Elastic Labs project. Elastic Labs projects are for illustrative and experimental purposes only. This Elastic Labs project is not part of any product or services offering provided or supported under a commercial license or subscription. This project is made available as-is under the terms of the license associated with this project. The release and timing of any features or functionality described in this project remain at Elastic's sole discretion. Any features or functionality not currently available may not be delivered on time or at all.
+This is an Elastic Labs project. Elastic Labs projects are for illustrative and experimental purposes only. This Elastic Labs project is not part of any product or services offering provided or supported under a commercial license or subscription. This project is made available as-is under the terms of the license associated with this project. The release and timing of any features or functionality described in this project remain at Elastic's sole discretion. Any features or functionality not currently available may not be delivered on time or at all.
 
 ## License
 elastic/chatgpt-log-analysis is available under the Apache 2.0 license. For more details see LICENSE.
