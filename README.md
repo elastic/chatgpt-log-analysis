@@ -28,19 +28,19 @@ These instructions will get you a copy of the project up and running on your loc
 
         pip install -r requirements.txt
 
-Note: If you have both Python 2 and Python 3 installed on your machine, you may need to use `pip3` instead of `pip`.
+      Note: If you have both Python 2 and Python 3 installed on your machine, you may need to use `pip3` instead of `pip`.
 
-The `requirements.txt` file includes the following packages:
+      The `requirements.txt` file includes the following packages:
 
-- flask
-- openai
-- elasticsearch
+      - flask
+      - openai
+      - elasticsearch
 
 3. Run the application:
 
         python app.py
 
-Again, you may need to use `python3` instead of `python`, depending on your setup.
+      Again, you may need to use `python3` instead of `python`, depending on your setup.
 
 ### Usage
 
